@@ -52,10 +52,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 }else{
 ?>
 <script type="text/javascript">
+    
     $(document).ready(function() {
       setTimeout(function() {
         $('.modal').toggle();
-      },6000);
+      },30000);
     });
 </script>
 <?php }
@@ -82,7 +83,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         });
     </script>
   <?php }?>
-
 
     <div class="scroll-up-btn">
         <i class="fas fa-angle-up"></i>
@@ -353,7 +353,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                             <i class="fas fa-clock"></i>
                             <div class="info">
                                 <div class="head">Servicio</div>
-                                <div class="sub-title">Lunes a Domingo de 7:00 am a 22:00 pm</div>
+                                <div class="sub-title">Lunes a Domingo de 8:00 am a 19:00 pm</div>
                             </div>
                         </div>
                         <div class="row">

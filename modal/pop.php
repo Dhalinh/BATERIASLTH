@@ -1,15 +1,3 @@
-
-<script type="text/javascript">
-      window.onload = function() {
-      var recaptcha = document.forms["formulario"]["g-recaptcha-response"];
-      recaptcha.required = true;
-      recaptcha.oninvalid = function(e) {
-        // si la función es null abrir alert
-        alert("Completa el formulario");
-      }
-    }
-</script>
-
 <!-- The Modal -->
 <div id="myModal" class="modal">
 
@@ -19,14 +7,18 @@
     
     <div class="content-modal">
     	<h1>¡No te vayas!</h1>
-    	<p>Queremos darte 5% de descuento en tu primera compra</p>
+    	<p>Queremos darte un descuento especial en tu primera compra</p>
 
     	<form action="sender.php" method="POST" name="formulario">
-    		<input type="hidden" name="origin" value="bateriaslthmexico.com.mx">
-        <input type="hidden" name="message" value="5% de descuento en primera compra">
-    		<input type="text" name="email" required="required" placeholder="ejemplo@gmail.com">
-        <center><div class="g-recaptcha" data-sitekey="6Ldar6EUAAAAAIxqUUFFXgkb59qX-Grs73y96XSg"></div></center>
-    		<button type="submit" name="send" value="pop">¡Obtén 5% de descuento!</button>
+        <input type="hidden" name="message" value="Quiero obtener mi descuento">
+
+        <div class="inputs-div">
+          <input type="text" name="name" placeholder="Nombre" required="required">
+          <input type="tel" name="phone" placeholder="55 5555 5555" required="required">
+        </div>
+    		<button class="desktop" type="submit" name="btn-action" value="desktop">Obtener descuento <i class="fab fa-whatsapp"></i></button>
+
+        <button class="mobil" type="submit" name="btn-action" value="mobil">Obtener descuento <i class="fab fa-whatsapp"></i></button>
     	</form>
 
     	<h6 class="no">No gracias prefiero pagar más</h6>
@@ -42,5 +34,21 @@
  	 $('.no').click(function(){
       $('.modal').css("display","none");
     });
+
+    $(document).ready(function(){
+      $(document).mousemove(function(event){
+        $('#coordenadas').text(event.pageX + ", " + event.pageY);
+
+        if(event.pageY<=38){
+          document.getElementById("myModal").style.display = "block";
+   
+        }
+         
+      });
+    });
+
+   function cerrar(){
+    document.getElementById("myModal").style.display = "block";
+   }
 
 </script>
